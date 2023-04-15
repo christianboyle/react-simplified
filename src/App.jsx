@@ -1,12 +1,15 @@
 import React from 'react'
+// import { TodoList } from './TodoList'
+import { TodoListClass } from './TodoListClass'
+import { MyNameClass } from './MyNameClass'
 
 function App() {
-  const myCustomLabel = <label htmlFor='inputId'>something</label>
-
   return (
     <div>
-      {myCustomLabel}
-      <input type='number' id='inputId' defaultValue={3} />
+      <h1>Todo List</h1>
+      {/* <TodoList /> */}
+      <TodoListClass />
+      <MyNameClass />
     </div>
   )
 }
