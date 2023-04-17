@@ -1,8 +1,7 @@
-import React from 'react'
-import { TodoListItem } from './TodoFunc'
+import { Counter } from './Counter'
 
 function App() {
-  return <TodoListItem isComplete={true}>Todo item 1</TodoListItem>
+  return <Counter />
 }
 
 export default App
