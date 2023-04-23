@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
   const [name, setName] = useState('')
   const [age, setAge] = useState(0)
+  const person = { name }
 
   function incrementAge() {
     return setAge((currentAge) => currentAge + 1)
@@ -11,6 +12,20 @@ function App() {
   function decrementAge() {
     return setAge((currentAge) => currentAge - 1)
   }
+
+  useEffect(() => {
+    // const handler = () => {
+    //   console.log(name)
+    // }
+    // console.log('inside effect')
+    // document.addEventListener('click', handler)
+
+    // return () => {
+    //   document.removeEventListener('click', handler)
+    //   console.log('cleanup')
+    // }
+    console.log(name)
+  }, [name])
 
   return (
     <>

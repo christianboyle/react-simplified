@@ -5,10 +5,10 @@ function App() {
   return (
     <>
       <CounterWithName />
-      <br />
+      {/* <br />
       <hr />
       <br />
-      <CounterWithNameClass />
+      <CounterWithNameClass /> */}
     </>
   )
 }
