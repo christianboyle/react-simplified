@@ -1,36 +1,23 @@
 import { useEffect, useState } from 'react'
 
+let globalVar = 0
+
 export function Child() {
   const [age, setAge] = useState(0)
   const [name, setName] = useState('')
 
-  useEffect(() => {
-    console.log('Re-Render')
-  })
+  globalVar = globalVar + 1
+  console.log(globalVar)
 
   useEffect(() => {
-    console.log('Hi')
+    document.addEventListener('click', () => {
+      console.log('Click')
+    })
 
     return () => {
-      console.log('Bye')
+      console.log('Unmount')
     }
   }, [])
-
-  useEffect(() => {
-    console.log(`My name is ${name} and I am ${age} years old`)
-  }, [name, age])
-
-  useEffect(() => {
-    document.title = name
-
-    const timeout = setTimeout(() => {
-      console.log(`My name is ${name}`)
-    }, 1000)
-
-    return () => {
-      clearTimeout(timeout)
-    }
-  }, [name])
 
   return (
     <div>
