@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, Fragment } from 'react'
 
 export default function App() {
   const [items, setItems] = useState([
@@ -14,18 +14,18 @@ export default function App() {
   }
 
   return (
-    <div>
+    <>
       <button onClick={addItem}>Add Item</button>
       <pre>
         {items.map((item) => {
           return (
-            <div key={item.id}>
-              {item.name}
-              <input type='text' />
-            </div>
+            <Fragment key={item.id}>
+              <span>Hi</span>
+              <div>{item.name}</div>
+            </Fragment>
           )
         })}
       </pre>
-    </div>
+    </>
   )
 }
